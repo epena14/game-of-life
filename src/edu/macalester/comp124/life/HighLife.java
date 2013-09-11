@@ -5,14 +5,14 @@ package edu.macalester.comp124.life;
  * @author Michael Ekstrand <ekstrand@cs.umn.edu>
  *
  */
-public class Conway implements RuleSet {
+public class HighLife implements RuleSet {
     
     public String getName() {
-        return "Conway's Rules";
+        return "HighLife";
     }
 
     /**
-     * Applies the rules of Conway's Game of Life.
+     * Applies the rules of HighLife's Game of Life.
      *
      *
      * @param isAlive The value of the current cell (true = alive).
@@ -29,6 +29,8 @@ public class Conway implements RuleSet {
             return false;
         } else if (neighborCount > 3) {
             return false;
+        } else if (neighborCount == 6) {
+            return true;
         } else {return false;}}}
         // return false; TODO: replace this with the correct rules
 
